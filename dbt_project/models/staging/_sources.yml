@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: raw
+    tables:
+      - name: customers
+      - name: materials
+      - name: installed_base
+      - name: change_requests
+      - name: ground_truth_defects

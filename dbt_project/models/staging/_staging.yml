@@ -1,0 +1,56 @@
+version: 2
+
+models:
+  - name: stg_customers
+    columns:
+      - name: customer_snapshot_key
+        data_tests: [unique, not_null]
+      - name: customer_id
+        data_tests: [not_null]
+      - name: snapshot_date
+        data_tests: [not_null]
+
+  - name: stg_materials
+    columns:
+      - name: material_snapshot_key
+        data_tests: [unique, not_null]
+      - name: material_id
+        data_tests: [not_null]
+      - name: snapshot_date
+        data_tests: [not_null]
+
+  - name: stg_installed_base
+    columns:
+      - name: asset_snapshot_key
+        data_tests: [unique, not_null]
+      - name: asset_id
+        data_tests: [not_null]
+      - name: snapshot_date
+        data_tests: [not_null]
+
+  - name: stg_change_requests
+    columns:
+      - name: request_id
+        data_tests: [unique, not_null]
+      - name: record_type
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['CUSTOMER', 'MATERIAL', 'INSTALLED_BASE']
+      - name: status
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['OPEN', 'IN_PROGRESS', 'CLOSED']
+      - name: priority
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['LOW', 'MEDIUM', 'HIGH']
+
+  - name: stg_ground_truth_defects
+    columns:
+      - name: record_id
+        data_tests: [not_null]
+      - name: defect_type
+        data_tests: [not_null]
