@@ -1,0 +1,86 @@
+version: 2
+
+models:
+  - name: dim_date
+    columns:
+      - name: date_day
+        data_tests: [unique, not_null]
+
+  - name: dim_rule
+    columns:
+      - name: rule_code
+        data_tests: [unique, not_null]
+
+  - name: dim_region
+    columns:
+      - name: region_code
+        data_tests: [unique, not_null]
+
+  - name: fct_dq_issue
+    columns:
+      - name: issue_key
+        data_tests: [unique, not_null]
+      - name: rule_code
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_rule')
+                field: rule_code
+      - name: snapshot_date
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: date_day
+      - name: region
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_region')
+                field: region_code
+
+  - name: fct_dq_scorecard
+    columns:
+      - name: scorecard_key
+        data_tests: [unique, not_null]
+      - name: rule_code
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_rule')
+                field: rule_code
+      - name: snapshot_date
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: date_day
+      - name: region
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_region')
+                field: region_code
+
+  - name: fct_change_request
+    columns:
+      - name: request_id
+        data_tests: [unique, not_null]
+      - name: rule_code
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_rule')
+                field: rule_code
+      - name: created_date
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: date_day
+      - name: region
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_region')
+                field: region_code
