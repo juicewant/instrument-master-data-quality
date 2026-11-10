@@ -1,0 +1,15 @@
+rule_code,table_name,quality_dimension,severity,description
+MISSING_TAX_ID,customers,Completeness,High,Tax ID is empty
+INVALID_EMAIL,customers,Validity,Medium,Email does not match a valid address format
+COUNTRY_FORMAT,customers,Consistency,Medium,Country is not stored as a 2-letter ISO code
+INVALID_POSTAL_CODE,customers,Validity,Medium,Postal code does not match the country format
+CURRENCY_MISMATCH,customers,Consistency,High,Currency differs from the expected currency for the country
+PAYMENT_TERMS_FORMAT,customers,Consistency,Low,Payment terms are not a standard code
+DUPLICATE_CUSTOMER,customers,Uniqueness,High,Same company name country and city appears more than once
+MISSING_UOM,materials,Completeness,High,Base unit of measure is empty
+INVALID_UOM,materials,Validity,Medium,Unit of measure is not a standard code
+MISSING_WEIGHT,materials,Completeness,Medium,Physical item has no weight or a weight of zero
+DUPLICATE_MATERIAL,materials,Uniqueness,Medium,Same description appears on more than one material
+ORPHAN_CUSTOMER,installed_base,Validity,High,Installed instrument points to a customer that does not exist
+CALIBRATION_BEFORE_INSTALL,installed_base,Validity,High,Next calibration due date is before the install date
+DUPLICATE_SERIAL,installed_base,Uniqueness,High,Serial number appears on more than one asset

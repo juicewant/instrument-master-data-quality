@@ -1,0 +1,13 @@
+iso2,iso3,country_name,region,expected_currency,postal_regex
+PH,PHL,Philippines,APAC,PHP,^[0-9]{4}$
+SG,SGP,Singapore,APAC,SGD,^[0-9]{6}$
+JP,JPN,Japan,APAC,JPY,^[0-9]{7}$
+AU,AUS,Australia,APAC,AUD,^[0-9]{4}$
+DE,DEU,Germany,EMEA,EUR,^[0-9]{5}$
+FR,FRA,France,EMEA,EUR,^[0-9]{5}$
+CH,CHE,Switzerland,EMEA,CHF,^[0-9]{4}$
+GB,GBR,United Kingdom,EMEA,GBP,^[A-Z][0-9] [0-9][A-Z]{2}$
+US,USA,United States,AMER,USD,^[0-9]{5}$
+CA,CAN,Canada,AMER,CAD,^[A-Z][0-9][A-Z] [0-9][A-Z][0-9]$
+BR,BRA,Brazil,AMER,BRL,^[0-9]{8}$
+MX,MEX,Mexico,AMER,MXN,^[0-9]{5}$

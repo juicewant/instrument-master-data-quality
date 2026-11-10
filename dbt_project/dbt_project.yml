@@ -4,6 +4,8 @@ config-version: 2
 profile: mdq
 
 model-paths: ["models"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
 macro-paths: ["macros"]
 target-path: "target"
 clean-targets: ["target", "dbt_packages"]
@@ -19,3 +21,7 @@ models:
     marts:
       +materialized: table
       +schema: marts
+
+seeds:
+  mdq:
+    +schema: reference
