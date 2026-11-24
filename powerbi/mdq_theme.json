@@ -1,0 +1,14 @@
+{
+  "name": "MDQ Theme",
+  "dataColors": ["#1F4E79", "#2E86C1", "#85C1E9", "#E67E22", "#C0392B", "#7F8C8D", "#27AE60", "#8E44AD"],
+  "background": "#FFFFFF",
+  "foreground": "#1B2631",
+  "tableAccent": "#1F4E79",
+  "good": "#27AE60",
+  "neutral": "#E67E22",
+  "bad": "#C0392B",
+  "textClasses": {
+    "title": { "fontFace": "Segoe UI Semibold", "fontSize": 14, "color": "#1B2631" },
+    "label": { "fontFace": "Segoe UI", "fontSize": 10, "color": "#1B2631" }
+  }
+}
